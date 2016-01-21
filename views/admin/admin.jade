@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  div.head
+    h1 Admin
+    
+  if restaurants
+    table
+      tbody
+        for restaurant in restaurants
+          tr
+            td=restaurant.name
+            td Rating: 
+              -var i = restaurant.rating
+                while i > 0
+                  img.star(src='/images/yellowstar.png' id=i--)
+            td: a(href='/restaurants/#{restaurant.id}') Edit
+            td: a(href='/restaurants/#{restaurant.id}/delete') Delete      
+        

@@ -1,0 +1,101 @@
+extends ../layout
+
+block content
+
+  div.edit
+    h1.hedit Edit Restaurant
+  div.container
+    if restaurant
+      form(action='/restaurants/'+restaurant.id+'/update' method='post')
+        fieldset.fedit
+          legend Edit Restaurant
+          div.form-group
+            label(for='name') Name
+            br
+            input.form-control(type='text' id='name' name='name' value= restaurant.name placeholder='Name')
+          div.form-group
+            label(for='location') Location
+            br
+            input.form-control(type='text' id='location' name='location' value= restaurant.location placeholder='Location')
+          div.form-group
+            select(type='text' id='state' name='state')
+              option(value='AL' selected=restaurant.state=== 'AL') Alabama
+              option(value='AK' selected=restaurant.state=== 'AK') Alaska
+              option(value='AZ' selected=restaurant.state=== 'AZ') Arizona
+              option(value='AR' selected=restaurant.state=== 'AR') Arkansas
+              option(value='CA' selected=restaurant.state=== 'CA') California
+              option(value='CO' selected=restaurant.state=== 'CO') Colorado
+              option(value='CT' selected=restaurant.state=== 'CT') Connecticut
+              option(value='DE' selected=restaurant.state=== 'DE') Delaware
+              option(value='DC' selected=restaurant.state=== 'DC') District Of Columbia
+              option(value='FL' selected=restaurant.state=== 'FL') Florida
+              option(value='GA' selected=restaurant.state=== 'GA') Georgia
+              option(value='HI' selected=restaurant.state=== 'HI') Hawaii
+              option(value='ID' selected=restaurant.state=== 'ID') Idaho
+              option(value='IL' selected=restaurant.state=== 'IL') Illinois
+              option(value='IN' selected=restaurant.state=== 'IN') Indiana
+              option(value='IA' selected=restaurant.state=== 'IA') Iowa
+              option(value='KS' selected=restaurant.state=== 'KS') Kansas
+              option(value='KY' selected=restaurant.state=== 'KY') Kentucky
+              option(value='LA' selected=restaurant.state=== 'LA') Louisiana
+              option(value='ME' selected=restaurant.state=== 'ME') Maine
+              option(value='MD' selected=restaurant.state=== 'MD') Maryland
+              option(value='MA' selected=restaurant.state=== 'MA') Massachusetts
+              option(value='MI' selected=restaurant.state=== 'MI') Michigan
+              option(value='MN' selected=restaurant.state=== 'MN') Minnesota
+              option(value='MS' selected=restaurant.state=== 'MS') Mississippi
+              option(value='MO' selected=restaurant.state=== 'MO') Missouri
+              option(value='MT' selected=restaurant.state=== 'MT') Montana
+              option(value='NE' selected=restaurant.state=== 'NE') Nebraska
+              option(value='NV' selected=restaurant.state=== 'NV') Nevada
+              option(value='NH' selected=restaurant.state=== 'NH') New Hampshire
+              option(value='NJ' selected=restaurant.state=== 'NJ') New Jersey
+              option(value='NM' selected=restaurant.state=== 'NM') New Mexico
+              option(value='NY' selected=restaurant.state=== 'NY') New York
+              option(value='NC' selected=restaurant.state=== 'NC') North Carolina
+              option(value='ND' selected=restaurant.state=== 'ND') North Dakota
+              option(value='OH' selected=restaurant.state=== 'OH') Ohio
+              option(value='OK' selected=restaurant.state=== 'OK') Oklahoma
+              option(value='OR' selected=restaurant.state=== 'OR') Oregon
+              option(value='PA' selected=restaurant.state=== 'PA') Pennsylvania
+              option(value='RI' selected=restaurant.state=== 'RI') Rhode Island
+              option(value='SC' selected=restaurant.state=== 'SC') South Carolina
+              option(value='SD' selected=restaurant.state=== 'SD') South Dakota
+              option(value='TN' selected=restaurant.state=== 'TN') Tennessee
+              option(value='TX' selected=restaurant.state=== 'TX') Texas
+              option(value='UT' selected=restaurant.state=== 'UT') Utah
+              option(value='VT' selected=restaurant.state=== 'VT') Vermont
+              option(value='VA' selected=restaurant.state=== 'VA') Virginia
+              option(value='WA' selected=restaurant.state=== 'WA') Washington
+              option(value='WV' selected=restaurant.state=== 'WV') West Virginia
+              option(value='WI' selected=restaurant.state=== 'WI') Wisconsin
+              option(value='WY' selected=restaurant.state=== 'WY') Wyoming
+          div.form-group
+            label(for='cuisine') Cuisine
+            br
+            select(type='text' id='cuisine' name='cuisine' value= restaurant.cuisine placeholder='Cuisine')
+              option(value='African' selected=restaurant.cuisine=== 'African') African
+              option(value='American' selected=restaurant.cuisine=== 'American') American
+              option(value='Breakfast' selected=restaurant.cuisine=== 'Breakfast') Breakfast
+              option(value='Cajun' selected=restaurant.cuisine=== 'Cajun') Cajun
+              option(value='Indian' selected=restaurant.cuisine=== 'Indian') Indian
+              option(value='Italian' selected=restaurant.cuisine=== 'Italian') Italian
+              option(value='Mexican' selected=restaurant.cuisine=== 'Mexican') Mexican
+              option(value='Sushi' selected=restaurant.cuisine=== 'Sushi') Sushi
+              option(value='Thai' selected=restaurant.cuisine=== 'Thai') Thai
+              option(value='Vietnamese' selected=restaurant.cuisine=== 'Vietnamese') Vietnamese
+          div.form-group
+            label Rating
+            input(type='radio' name='rating' value='1' checked=(restaurant ? (restaurant.rating === 1 ? true : undefined): undefined))
+            input(type='radio' name='rating' value='2' checked=(restaurant ? (restaurant.rating === 2 ? true : undefined): undefined))
+            input(type='radio' name='rating' value='3' checked=(restaurant ? (restaurant.rating === 3 ? true : undefined): undefined))
+            input(type='radio' name='rating' value='4' checked=(restaurant ? (restaurant.rating === 4 ? true : undefined): undefined))
+            input(type='radio' name='rating' value='5' checked=(restaurant ? (restaurant.rating === 5 ? true : undefined): undefined))
+          div.form-group
+            label(for='image') Image
+            input.form-control(type='text' id='image' value=restaurant.image placeholder='https://www.google.com' name='image')
+          div.form-group
+            textarea.form-control(rows='5' name='bio' id='bio') #{restaurant.bio}
+          div.buttons
+            button.btn.btn-primary#sub(type='submit') Update
+            a.btn.btn-primary(href='/restaurants/'+restaurant.id) Cancel

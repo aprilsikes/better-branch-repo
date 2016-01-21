@@ -1,8 +1,239 @@
+* {
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: auto;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: #909090;
 }
+
+.splash {
+  background: #7EC479;
+  width: 100%;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2%;
+  background: #7EC479;
+}
+
+.name, .edit, .new {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 20%;
+  background: #7EC479;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin-top: 55px;
+}
+
+.fedit {
+  width: 100%;
+  display: flex;
+}
+
+h1 {
+  font-size: 9vh;
+  font-weight: lighter;
+  align-self: center;
+  margin: auto;
+  margin-right: 280px;
+}
+
+.show, .hedit, .hnew {
+  font-size: 7vh;
+  font-weight: lighter;
+  align-self: center;
+  margin: auto;
+}
+
+#new {
+  align-self: flex-end;
+  margin-right: 1%;;
+  margin-bottom: 1%;
+  clear: both;
+}
+
+.new {
+  color: #FFFFFF;
+}
+
+.rest {
+  display: flex;
+  flex-direction: column;
+  background: #E1E1E1;
+  border: solid black 2px;
+  width: 23%;
+  height: 23%;
+  font-weight: lighter;
+  margin: 25px 10px;
+}
+
+img {
+  width: 70%;
+  height: 70%;
+  align-self: center;
+  margin: 0;
+  margin-bottom: 0;
+
+}
+
+.img {
+  width: 50%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.well-lg {
+  width: 50%;
+  height: 75%;
+  /*border: solid black 1px;*/
+}
+
+.nam {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cui, .local{
+  font-size: 12px;
+  font-weight: normal;
+  color: #909090;
+  margin: 0;
+  align-self: flex-start;
+}
+
+.cont {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  font-weight: lighter;
+  margin-top: 60px;
+}
+
+.loca {
+  margin-top: 0;
+}
+
+.cuis {
+  margin-bottom: 0;
+}
+
+.form {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#sub, .btn-link {
+  background: #7EC479;
+  color: #909090;
+  width: 75px;
+  height: 30px;
+  text-align: center;
+  vertical-align:
+  border-radius: 2px;
+}
+
+.btn.btn-primary, .btn.btn-link {
+  background: #F06C53;
+  color: #909090;
+  width: 75px;
+  height: 30px;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: lighter;
+  font-family: 'Quicksand';
+  border-radius: 2px;
+  margin-left: 25px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hnew {
+  color: #000000;
+}
+
+.fnew {
+  width: 100%;
+  display: flex;
+}
+
+form {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+.cui {
+  display: flex;
+  margin-bottom: 0;
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-bottom: 0;
+}
+
+.starry {
+  align-self: flex-end;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.rev {
+  border: solid #7DC376 2px;
+}
+
+.revrname {
+  background: #E6F5E2;
+}
+
+.emp {
+  border: solid #7DC376 2px;
+}
+
+table {
+  border: solid #7DC376 2px;
+}
+
+thead {
+  background: #E6F5E2;
+}
+Status API Training Shop Blog About Pricing

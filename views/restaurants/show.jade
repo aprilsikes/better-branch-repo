@@ -1,0 +1,54 @@
+extends ../layout
+
+block content
+  
+  if restaurant
+    div.name
+      h1.show= restaurant.name
+      div#back
+        a.back(href='/restaurants') View All Restaurants
+    div.cont
+      div.img
+        img(src='#{restaurant.image}')
+      div.well.well-lg
+        h3.cuis #{restaurant.cuisine} Cuisine 
+        h3.loca Located in #{restaurant.location}, #{restaurant.state}
+        p= restaurant.bio
+        br
+        div.starry
+            p Rating: 
+              -var i = restaurant.rating
+                while i > 0
+                  img.star(src='/images/yellowstar.png' id=i--)
+        div.form 
+          a.btn-link(href='/restaurants/'+restaurant.id+'/edit') Edit
+          form(action='/restaurants/#{restaurant.id}/delete' method='post')
+            input.btn.btn-link(type='submit' value='Delete')
+          a.btn-review(href='/restaurants/'+restaurant.id+'/reviews/new') Add Review 
+          a.btn-emp(href='/restaurants/'+restaurant.id+'/employees/new') Add Employee 
+            
+  if reviews
+    div.r
+      each reviewer in reviews
+        div.rev
+          h3.revrname= reviewer.reviewer_name 
+          h3.revdate= reviewer.date
+          p.revrev= reviewer.review
+          p.revstar
+            while i > 0
+              img.star(src='/images/yellowstar.png' id=i--)
+          a.btn-revlink(href='/restaurants/#{restaurant.id}/reviews/'+reviewer.id+'/edit') Edit 
+        
+  if employees
+    table.table.table-striped
+     thead
+       tr
+         th First Name
+         th Last Name
+         th Position
+     tbody
+       for employee in employees
+         tr
+           td= employee.first_name
+           td= employee.last_name
+           td= employee.position

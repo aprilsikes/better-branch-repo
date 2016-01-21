@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  div.head
+    h1 gTables
+    div#new
+      a.new(href='/restaurants/new') New Restaurant
+      a.admin(href='/restaurants/admin') Admin
+  
+  
+  if restaurants
+    for restaurant in restaurants
+      div.rest
+        p.nam: a(href='restaurants/' +restaurant.id) #{restaurant.name}
+        img(src='#{restaurant.image}')
+        p.cui #{restaurant.cuisine} Cuisine
+        p.local #{restaurant.location}, #{restaurant.state}
+        div.starry
+          - var i = restaurant.rating;
+            while i > 0
+              img.star(src='/images/yellowstar.png' id=i--)
+        

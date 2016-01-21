@@ -1,0 +1,101 @@
+extends ../layout
+
+block content
+
+  div.new
+    h1.hnew New Restaurant
+  div.container
+    form(action='/restaurants/show' method='post')
+      fieldset.fnew
+        legend Create Restaurant
+        div.form-group
+          label(for='name') Name
+          br
+          input.form-control(type='text' id='name' placeholder='Restaurant Name' name='name')
+        div.form-group
+          label(for='location') Location
+          br
+          input.form-control(type='text' id='location' placeholder='City' name='location')
+        div.form-group
+          select(type='text' id='state' name='state')
+            option(value='AL' selected='selected') Alabama
+            option(value='AK') Alaska
+            option(value='AZ') Arizona
+            option(value='AR') Arkansas
+            option(value='CA') California
+            option(value='CO') Colorado
+            option(value='CT') Connecticut
+            option(value='DE') Delaware
+            option(value='DC') District Of Columbia
+            option(value='FL') Florida
+            option(value='GA') Georgia
+            option(value='HI') Hawaii
+            option(value='ID') Idaho
+            option(value='IL') Illinois
+            option(value='IN') Indiana
+            option(value='IA') Iowa
+            option(value='KS') Kansas
+            option(value='KY') Kentucky
+            option(value='LA') Louisiana
+            option(value='ME') Maine
+            option(value='MD') Maryland
+            option(value='MA') Massachusetts
+            option(value='MI') Michigan
+            option(value='MN') Minnesota
+            option(value='MS') Mississippi
+            option(value='MO') Missouri
+            option(value='MT') Montana
+            option(value='NE') Nebraska
+            option(value='NV') Nevada
+            option(value='NH') New Hampshire
+            option(value='NJ') New Jersey
+            option(value='NM') New Mexico
+            option(value='NY') New York
+            option(value='NC') North Carolina
+            option(value='ND') North Dakota
+            option(value='OH') Ohio
+            option(value='OK') Oklahoma
+            option(value='OR') Oregon
+            option(value='PA') Pennsylvania
+            option(value='RI') Rhode Island
+            option(value='SC') South Carolina
+            option(value='SD') South Dakota
+            option(value='TN') Tennessee
+            option(value='TX') Texas
+            option(value='UT') Utah
+            option(value='VT') Vermont
+            option(value='VA') Virginia
+            option(value='WA') Washington
+            option(value='WV') West Virginia
+            option(value='WI') Wisconsin
+            option(value='WY') Wyoming
+        div.form-group
+          label(for='cuisine') Cuisine
+          br
+          select(type='text' id='cuisine' name='cuisine')
+            option(value='African' selected='selected') African
+            option(value='American') American
+            option(value='Breakfast') Breakfast
+            option(value='Cajun') Cajun
+            option(value='Indian') Indian
+            option(value='Italian') Italian
+            option(value='Mexican') Mexican
+            option(value='Sushi') Sushi
+            option(value='Thai') Thai
+            option(value='Vietnamese') Vietnamese
+        div.form-group
+          label Rating
+          input(type='radio' name='rating' value='1' checked)
+          input(type='radio' name='rating' value='2')
+          input(type='radio' name='rating' value='3')
+          input(type='radio' name='rating' value='4')
+          input(type='radio' name='rating' value='5')
+        div.form-group
+          label(for='image') Image
+          input.form-control(type='text' id='image' placeholder='Image URL' name='image')
+        div.form-group
+          label(for='bio')
+          textarea.form-control(rows='5' id='bio' placeholder='Short Bio' name='bio')
+        div.buttons
+          button.btn.btn-primary#sub(type='submit') Submit
+          a.btn.btn-primary(href='/restaurants') Cancel

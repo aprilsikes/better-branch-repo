@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+
+  div.emp
+    h1.hempEdit Edit Employee
+  div.container
+    if employee
+      form(action='/restaurants/#{restaurant.id}/employees/#{employee.id}/edited' method='post')
+        fieldset.fempEdit
+          legend Edit Employee
+          div.form-group
+            label(for='first_name') First Name
+            br
+            input.form-control(type='text' id='first_name' name='first_name' value= employee.first_name placeholder='First')
+          div.form-group
+            label(for='last_name') Last Name
+            br
+            input.form-control(type='text' id='last_name' name='last_name' value= employee.last_name placeholder='Last')
+          div.form-group
+            label(for='position') Position
+            br
+            select(type='text' id='position' name='position')
+              option(value='Chef' selected=employee.position=== 'Chef') Chef
+              option(value='Host' selected=employee.position=== 'Host') Host
+              option(value='Manager' selected=employee.position=== 'Manager') Manager
+              option(value='Server' selected=employee.position=== 'Server') Server
+          div.buttons
+            button.btn.btn-primary#sub(type='submit') Submit
+            a.btn.btn-primary(href='/restaurants/'+restaurant.id) Cancel
