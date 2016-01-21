@@ -5,7 +5,7 @@ block content
   div.rev
     h1.hrev New Review
   div.container
-    form(action='/restaurants/'+restaurant.id+'/reviews' method='POST')
+    form(action='/'+restaurant.id+'/reviews' method='POST')
       fieldset.frev
         legend New Review
         div.form-group

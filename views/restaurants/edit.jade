@@ -14,9 +14,17 @@ block content
             br
             input.form-control(type='text' id='name' name='name' value= restaurant.name placeholder='Name')
           div.form-group
-            label(for='location') Location
+            label(for='street1') Street1
             br
-            input.form-control(type='text' id='location' name='location' value= restaurant.location placeholder='Location')
+            input.form-control(type='text' id='street1' placeholder='Street1' name='street1' value= restaurant.street1)
+          div.form-group
+            label(for='street2') Street2
+            br
+            input.form-control(type='text' id='street2' placeholder='Street2' name='street2'value= restaurant.street2)
+          div.form-group
+            label(for='city') City
+            br
+            input.form-control(type='text' id='city' placeholder='City' name='city' value= restaurant.city)
           div.form-group
             select(type='text' id='state' name='state')
               option(value='AL' selected=restaurant.state=== 'AL') Alabama

@@ -25,20 +25,19 @@ router.get('/new', function (req, res, next) {
   res.render('restaurants/new');
 });
 
-router.post('/', function (req, res, next) {
+router.post('/:id', function (req, res, next) {
 
   var restaurant = {
     name: req.body.name,
-    address1: req.body.address1,
-    address2: req.body.address2,
+    street1: req.body.street1,
+    street2: req.body.street2,
     city: req.body.city,
     state: req.body.state,
     zip: req.body.zip,
     cuisine: req.body.cuisine,
     rating: req.body.rating,
     image: req.body.image,
-    bio: req.body.bio,
-    neighborhood_id: req.body.neighborhood_id
+    bio: req.body.bio
   }
 
   Restaurants().insert(restaurant).then(function (results) {
@@ -55,3 +54,23 @@ router.get('/:id', function (req, res, next) {
     });
   });
 });
+
+router.get('/:id/edit', function (req, res, next) {
+  Restaurants().where('id', req.params.id).first().then(function (results) {
+    res.render('restaurants/edit', {restaurant: results});
+  });
+});
+
+router.post('/:id/update', function (req, res, next) {
+  Restaurants().where('id', req.params.id).update(req.body).then(function (results) {
+    res.redirect('/'+req.params.id);
+  });
+});
+
+router.get('/:id/delete', function (req, res, next) {
+  Restaurants().where('id', req.params.id).del().then(function (results) {
+    res.render('restaurants/index');
+  });
+});
+
+module.exports = router;

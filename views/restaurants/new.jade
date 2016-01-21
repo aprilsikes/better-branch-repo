@@ -5,7 +5,7 @@ block content
   div.new
     h1.hnew New Restaurant
   div.container
-    form(action='/restaurants/show' method='post')
+    form(action='/:id' method='post')
       fieldset.fnew
         legend Create Restaurant
         div.form-group
@@ -13,9 +13,17 @@ block content
           br
           input.form-control(type='text' id='name' placeholder='Restaurant Name' name='name')
         div.form-group
-          label(for='location') Location
+          label(for='street1') Street1
           br
-          input.form-control(type='text' id='location' placeholder='City' name='location')
+          input.form-control(type='text' id='street1' placeholder='Street1' name='street1')
+        div.form-group
+          label(for='street2') Street2
+          br
+          input.form-control(type='text' id='street2' placeholder='Street2' name='street2')
+        div.form-group
+          label(for='city') City
+          br
+          input.form-control(type='text' id='city' placeholder='City' name='city')
         div.form-group
           select(type='text' id='state' name='state')
             option(value='AL' selected='selected') Alabama
@@ -70,6 +78,59 @@ block content
             option(value='WI') Wisconsin
             option(value='WY') Wyoming
         div.form-group
+          label(for='zip') Zip Code
+          br
+          input.form-control(type='text' id='zip' placeholder='Zip Code' name='zip')
+        div.form-group
+          label(for='neighborhood') Neighborhood
+          br
+          select(type='text' id='neighborhood' name='neighborhood')
+            option(value='Barker' selected='selected') Barker
+            option(value='Breezedale') Breezedale
+            option(value='Briarwood') Briarwood
+            option(value='Brook Creek') Brook Creek
+            option(value='Centennial') Centennial
+            option(value='Congressional Place') Congressional Place
+            option(value='Cottages') Cottages
+            option(value='Deerfield') Deerfield
+            option(value='9') Downtown
+            option(value='East Lawrence') East Lawrence
+            option(value='Edgewood TA') Edgewood TA
+            option(value='Gateway') Gateway
+            option(value='Hillcrest') Hillcrest
+            option(value='Hills West') Hills West
+            option(value='Indian Hills') Indian Hills
+            option(value='Joseph Drive') Joseph Drive
+            option(value='Meadows Place') Meadows Place
+            option(value='Monterey') Monterey
+            option(value='North Lawrence') North Lawrence
+            option(value='Old West Lawrence') Old West Lawrence
+            option(value='Oread Neighborhood') Oread Neighborhood
+            option(value='Oread Residents') Oread Residents
+            option(value='Park Hill') Park Hill
+            option(value='Perry Park') Perry Park
+            option(value='Pinckney') Pinckney
+            option(value='Prairie Meadows') Prairie Meadows
+            option(value='Prairie Park') Prairie Park
+            option(value='Quail Ridge East') Quail Ridge East
+            option(value='Quail Run') Quail Run
+            option(value='Raintree') Raintree
+            option(value='Scenic Riverway') Scenic Riverway
+            option(value='South Meadow') South Meadow
+            option(value='South Siders') South Siders
+            option(value='Southern Parkway') Southern Parkway
+            option(value='Stoneback Ridge') Stoneback Ridge
+            option(value='Sunflower') Sunflower
+            option(value='Sunset Hills') Sunset Hills
+            option(value='The Cottages') The Cottages
+            option(value='University Heights') University Heights
+            option(value='University Place') University Place
+            option(value='West Hills') West Hills
+            option(value='West Lawrence') West Lawrence
+            option(value='Western Hills') Western Hills
+            option(value='Westwood') Westwood
+            option(value='Woods on 19th') Woods on 19th
+        div.form-group
           label(for='cuisine') Cuisine
           br
           select(type='text' id='cuisine' name='cuisine')
@@ -98,4 +159,4 @@ block content
           textarea.form-control(rows='5' id='bio' placeholder='Short Bio' name='bio')
         div.buttons
           button.btn.btn-primary#sub(type='submit') Submit
-          a.btn.btn-primary(href='/restaurants') Cancel
+          a.btn.btn-primary(href='/') Cancel

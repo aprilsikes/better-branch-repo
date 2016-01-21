@@ -10,3 +10,5 @@ function Employees() {
 function Restaurants() {
   return knex('restaurants');
 }
+
+module.exports = router;

@@ -12,7 +12,7 @@ block content
         img(src='#{restaurant.image}')
       div.well.well-lg
         h3.cuis #{restaurant.cuisine} Cuisine 
-        h3.loca Located in #{restaurant.location}, #{restaurant.state}
+        h3.loca Located in #{restaurant.city}, #{restaurant.state}
         p= restaurant.bio
         br
         div.starry
@@ -22,10 +22,10 @@ block content
                   img.star(src='/images/yellowstar.png' id=i--)
         div.form 
           a.btn-link(href='/restaurants/'+restaurant.id+'/edit') Edit
-          form(action='/restaurants/#{restaurant.id}/delete' method='post')
+          form(action='/#{restaurant.id}/delete' method='post')
             input.btn.btn-link(type='submit' value='Delete')
-          a.btn-review(href='/restaurants/'+restaurant.id+'/reviews/new') Add Review 
-          a.btn-emp(href='/restaurants/'+restaurant.id+'/employees/new') Add Employee 
+          a.btn-review(href='/'+restaurant.id+'/reviews/new') Add Review 
+          a.btn-emp(href='/'+restaurant.id+'/employees/new') Add Employee 
             
   if reviews
     div.r
@@ -37,7 +37,7 @@ block content
           p.revstar
             while i > 0
               img.star(src='/images/yellowstar.png' id=i--)
-          a.btn-revlink(href='/restaurants/#{restaurant.id}/reviews/'+reviewer.id+'/edit') Edit 
+          a.btn-revlink(href='/#{restaurant.id}/reviews/'+reviewer.id+'/edit') Edit 
         
   if employees
     table.table.table-striped
