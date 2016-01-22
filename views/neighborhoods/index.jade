@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 Neighborhoods
+  div#map(style='height:300px; width:300px; border: 1px solid #888')
+  
+  script. 
+    var map;
+    
+    
+    var latty = #{lat_long.lat};
+    var longy = #{lat_long.lng};
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: latty, lng: longy},
+        zoom: 8
+      });
+    }
+    
+  script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo3qt_yoDV6muFVcMa96dDSGG7e6CrIyU&callback=initMap")
+  

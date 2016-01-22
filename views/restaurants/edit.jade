@@ -79,6 +79,59 @@ block content
               option(value='WI' selected=restaurant.state=== 'WI') Wisconsin
               option(value='WY' selected=restaurant.state=== 'WY') Wyoming
           div.form-group
+            label(for='zip') Zip Code 
+            br
+            input.form-control(type='text' id='zip' placeholder='Zip Code' name='zip' value= restaurant.zip)
+          div.form-group
+            label(for='neighborhood') Neighborhood
+            br
+            select(type='text' id='neighborhood' name='neighborhood')
+              option(value='1' name='Barker' selected=restaurant.neighborhood_id=== '1') Barker
+              option(value='2' name='Breezedale' selected=restaurant.neighborhood_id=== '2') Breezedale
+              option(value='3' name='Briarwood' selected=restaurant.neighborhood_id=== '3') Briarwood
+              option(value='4' name='Brook Creek' selected=restaurant.neighborhood_id=== '4') Brook Creek
+              option(value='5' name='Centennial' selected=restaurant.neighborhood_id=== '5') Centennial
+              option(value='6' name='Congressional Place' selected=restaurant.neighborhood_id=== '6') Congressional Place
+              option(value='7' name='Cottages' selected=restaurant.neighborhood_id=== '7') Cottages
+              option(value='8' name='Deerfield' selected=restaurant.neighborhood_id=== '8') Deerfield
+              option(value='9' name='downtown' selected=restaurant.neighborhood_id=== '9') Downtown
+              option(value='10' name='East Lawrence' selected=restaurant.neighborhood_id=== '10') East Lawrence
+              option(value='11' name='Edgewood TA' selected=restaurant.neighborhood_id=== '11') Edgewood TA
+              option(value='12' name='Gateway' selected=restaurant.neighborhood_id=== '12') Gateway
+              option(value='13' name='Hillcrest' selected=restaurant.neighborhood_id=== '13') Hillcrest
+              option(value='14' name='Hills West' selected=restaurant.neighborhood_id=== '14') Hills West
+              option(value='15' name='Indian Hills' selected=restaurant.neighborhood_id=== '15') Indian Hills
+              option(value='16' name='Joseph Drive' selected=restaurant.neighborhood_id=== '16') Joseph Drive
+              option(value='17' name='Meadows Place' selected=restaurant.neighborhood_id=== '17') Meadows Place
+              option(value='18' name='Monterey' selected=restaurant.neighborhood_id=== '18') Monterey
+              option(value='19' name='North Lawrence' selected=restaurant.neighborhood_id=== '19') North Lawrence
+              option(value='20' name='Old West Lawrence' selected=restaurant.neighborhood_id=== '20') Old West Lawrence
+              option(value='21' name='Oread Neighborhood' selected=restaurant.neighborhood_id=== '21') Oread Neighborhood
+              option(value='22' name='Oread Residents' selected=restaurant.neighborhood_id=== '22') Oread Residents
+              option(value='23' name='Park Hill' selected=restaurant.neighborhood_id=== '23') Park Hill
+              option(value='24' name='Perry Park' selected=restaurant.neighborhood_id=== '24') Perry Park
+              option(value='25' name='Pinckney' selected=restaurant.neighborhood_id=== '25') Pinckney
+              option(value='26' name='Prairie Meadows' selected=restaurant.neighborhood_id=== '26') Prairie Meadows
+              option(value='27' name='Prairie Park' selected=restaurant.neighborhood_id=== '27') Prairie Park
+              option(value='28' name='Quail Ridge East' selected=restaurant.neighborhood_id=== '28') Quail Ridge East
+              option(value='29' name='Quail Run' selected=restaurant.neighborhood_id=== '29') Quail Run
+              option(value='30' name='Raintree' selected=restaurant.neighborhood_id=== '30') Raintree
+              option(value='31' name='Scenic Riverway' selected=restaurant.neighborhood_id=== '31') Scenic Riverway
+              option(value='32' name='South Meadow' selected=restaurant.neighborhood_id=== '32') South Meadow
+              option(value='33' name='South Siders' selected=restaurant.neighborhood_id=== '33') South Siders
+              option(value='34' name='Southern Parkway' selected=restaurant.neighborhood_id=== '34') Southern Parkway
+              option(value='35' name='Stoneback Ridge' selected=restaurant.neighborhood_id=== '35') Stoneback Ridge
+              option(value='36' name='Sunflower' selected=restaurant.neighborhood_id=== '36') Sunflower
+              option(value='37' name='Sunset Hills' selected=restaurant.neighborhood_id=== '37') Sunset Hills
+              option(value='38' name='The Cottages' selected=restaurant.neighborhood_id=== '38') The Cottages
+              option(value='39' name='University Heights' selected=restaurant.neighborhood_id=== '39') University Heights
+              option(value='40' name='University Place' selected=restaurant.neighborhood_id=== '40') University Place
+              option(value='41' name='West Hills' selected=restaurant.neighborhood_id=== '41') West Hills
+              option(value='42' name='West Lawrence' selected=restaurant.neighborhood_id=== '42') West Lawrence
+              option(value='43' name='Western Hills' selected=restaurant.neighborhood_id=== '43') Western Hills
+              option(value='44' name='Westwood' selected=restaurant.neighborhood_id=== '44') Westwood
+              option(value='45' name='Woods on 19th' selected=restaurant.neighborhood_id=== '45') Woods on 19th
+          div.form-group
             label(for='cuisine') Cuisine
             br
             select(type='text' id='cuisine' name='cuisine' value= restaurant.cuisine placeholder='Cuisine')

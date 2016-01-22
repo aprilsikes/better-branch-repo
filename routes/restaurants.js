@@ -37,7 +37,8 @@ router.post('/:id', function (req, res, next) {
     cuisine: req.body.cuisine,
     rating: req.body.rating,
     image: req.body.image,
-    bio: req.body.bio
+    bio: req.body.bio,
+    neighborhood_id: req.body.neighborhood
   }
 
   Restaurants().insert(restaurant).then(function (results) {

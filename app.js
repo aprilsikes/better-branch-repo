@@ -10,6 +10,7 @@ var routes = require('./routes/index');
 var restaurants = require('./routes/restaurants');
 var employees = require('./routes/employees');
 var reviews = require('./routes/reviews');
+var neighborhoods = require('./routes/neighborhoods');
 
 var app = express();
 
@@ -25,11 +26,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/restaurants', routes);
+app.use('/', routes);
 // app.use('/', users);
 app.use('/restaurants', restaurants);
 app.use('/restaurants', reviews);
 app.use('/restaurants', employees);
+app.use('/neighborhoods', neighborhoods);
 
 
 
