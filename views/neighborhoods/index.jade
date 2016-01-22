@@ -1,22 +1,40 @@
-extends layout
+extends ../layout
 
 block content
-  h1 Neighborhoods
-  div#map(style='height:300px; width:300px; border: 1px solid #888')
-  
-  script. 
-    var map;
-    
-    
-    var latty = #{lat_long.lat};
-    var longy = #{lat_long.lng};
+  if neighborhoods
+    h1 Neighborhoods
+      
+      
+    div#map_canvas(style="width:700px; height:500px; margin-left:80px;")
+    div#map_canvas2(style="width:700px; height:500px; margin-left:80px;")
 
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: latty, lng: longy},
-        zoom: 8
-      });
-    }
     
-  script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo3qt_yoDV6muFVcMa96dDSGG7e6CrIyU&callback=initMap")
-  
+    script. 
+      var map, map2;
+
+      function initialize(condition) {
+          // create the maps
+        for neighborhood in neighborhoods
+          
+          var collection = #{location}
+          collection.forEach(function())
+            $ajax = ({
+              url:
+              })  
+          
+          var myOptions = {
+              zoom: 14,
+              center: new google.maps.LatLng(0.0, 0.0),
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+          map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+          map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
+      }
+    
+
+
+      
+        
+      script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo3qt_yoDV6muFVcMa96dDSGG7e6CrIyU&callback=initMap")
+      

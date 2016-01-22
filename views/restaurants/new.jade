@@ -5,7 +5,7 @@ block content
   div.new
     h1.hnew New Restaurant
   div.container
-    form(action='/:id' method='post')
+    form(action='/restaurants' method='post')
       fieldset.fnew
         legend Create Restaurant
         div.form-group
@@ -82,54 +82,54 @@ block content
           br
           input.form-control(type='text' id='zip' placeholder='Zip Code' name='zip')
         div.form-group
-          label(for='neighborhood') Neighborhood
+          label(for='neighborhood_id') Neighborhood
           br
-          select(type='text' id='neighborhood' name='neighborhood')
+          select(type='text' id='neighborhood_id' name='neighborhood_id')
             option(value='1' name='Barker' selected='selected') Barker
-            option(value='2' name='Breezedale') Breezedale
-            option(value='3' name='Briarwood') Briarwood
-            option(value='4' name='Brook Creek') Brook Creek
-            option(value='5' name='Centennial') Centennial
-            option(value='6' name='Congressional Place') Congressional Place
-            option(value='7' name='Cottages') Cottages
-            option(value='8' name='Deerfield') Deerfield
+            //- option(value='2' name='Breezedale') Breezedale
+            //- option(value='3' name='Briarwood') Briarwood
+            //- option(value='4' name='Brook Creek') Brook Creek
+            //- option(value='5' name='Centennial') Centennial
+            //- option(value='6' name='Congressional Place') Congressional Place
+            //- option(value='7' name='Cottages') Cottages
+            //- option(value='8' name='Deerfield') Deerfield
             option(value='9' name='downtown') Downtown
             option(value='10' name='East Lawrence') East Lawrence
-            option(value='11' name='Edgewood TA') Edgewood TA
-            option(value='12' name='Gateway') Gateway
-            option(value='13' name='Hillcrest') Hillcrest
-            option(value='14' name='Hills West') Hills West
-            option(value='15' name='Indian Hills') Indian Hills
-            option(value='16' name='Joseph Drive') Joseph Drive
-            option(value='17' name='Meadows Place') Meadows Place
-            option(value='18' name='Monterey') Monterey
+            //- option(value='11' name='Edgewood TA') Edgewood TA
+            //- option(value='12' name='Gateway') Gateway
+            //- option(value='13' name='Hillcrest') Hillcrest
+            //- option(value='14' name='Hills West') Hills West
+            //- option(value='15' name='Indian Hills') Indian Hills
+            //- option(value='16' name='Joseph Drive') Joseph Drive
+            //- option(value='17' name='Meadows Place') Meadows Place
+            //- option(value='18' name='Monterey') Monterey
             option(value='19' name='North Lawrence') North Lawrence
             option(value='20' name='Old West Lawrence') Old West Lawrence
-            option(value='21' name='Oread Neighborhood') Oread Neighborhood
-            option(value='22' name='Oread Residents') Oread Residents
-            option(value='23' name='Park Hill') Park Hill
-            option(value='24' name='Perry Park') Perry Park
-            option(value='25' name='Pinckney') Pinckney
-            option(value='26' name='Prairie Meadows') Prairie Meadows
-            option(value='27' name='Prairie Park') Prairie Park
-            option(value='28' name='Quail Ridge East') Quail Ridge East
-            option(value='29' name='Quail Run') Quail Run
-            option(value='30' name='Raintree') Raintree
-            option(value='31' name='Scenic Riverway') Scenic Riverway
-            option(value='32' name='South Meadow') South Meadow
-            option(value='33' name='South Siders') South Siders
-            option(value='34' name='Southern Parkway') Southern Parkway
-            option(value='35' name='Stoneback Ridge') Stoneback Ridge
-            option(value='36' name='Sunflower') Sunflower
-            option(value='37' name='Sunset Hills') Sunset Hills
-            option(value='38' name='The Cottages') The Cottages
-            option(value='39' name='University Heights') University Heights
+            //- option(value='21' name='Oread Neighborhood') Oread Neighborhood
+            //- option(value='22' name='Oread Residents') Oread Residents
+            //- option(value='23' name='Park Hill') Park Hill
+            //- option(value='24' name='Perry Park') Perry Park
+            //- option(value='25' name='Pinckney') Pinckney
+            //- option(value='26' name='Prairie Meadows') Prairie Meadows
+            //- option(value='27' name='Prairie Park') Prairie Park
+            //- option(value='28' name='Quail Ridge East') Quail Ridge East
+            //- option(value='29' name='Quail Run') Quail Run
+            //- option(value='30' name='Raintree') Raintree
+            //- option(value='31' name='Scenic Riverway') Scenic Riverway
+            //- option(value='32' name='South Meadow') South Meadow
+            //- option(value='33' name='South Siders') South Siders
+            //- option(value='34' name='Southern Parkway') Southern Parkway
+            //- option(value='35' name='Stoneback Ridge') Stoneback Ridge
+            //- option(value='36' name='Sunflower') Sunflower
+            //- option(value='37' name='Sunset Hills') Sunset Hills
+            //- option(value='38' name='The Cottages') The Cottages
+            //- option(value='39' name='University Heights') University Heights
             option(value='40' name='University Place') University Place
-            option(value='41' name='West Hills') West Hills
-            option(value='42' name='West Lawrence') West Lawrence
-            option(value='43' name='Western Hills') Western Hills
-            option(value='44' name='Westwood') Westwood
-            option(value='45' name='Woods on 19th') Woods on 19th
+            //- option(value='41' name='West Hills') West Hills
+            //- option(value='42' name='West Lawrence') West Lawrence
+            //- option(value='43' name='Western Hills') Western Hills
+            //- option(value='44' name='Westwood') Westwood
+            //- option(value='45' name='Woods on 19th') Woods on 19th
         div.form-group
           label(for='cuisine') Cuisine
           br
@@ -159,4 +159,4 @@ block content
           textarea.form-control(rows='5' id='bio' placeholder='Short Bio' name='bio')
         div.buttons
           button.btn.btn-primary#sub(type='submit') Submit
-          a.btn.btn-primary(href='/') Cancel
+          a.btn.btn-primary(href='/restaurants') Cancel

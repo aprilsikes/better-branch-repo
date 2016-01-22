@@ -6,7 +6,7 @@ block content
     h1.hempEdit Edit Employee
   div.container
     if employee
-      form(action='/restaurants/#{restaurant.id}/employees/#{employee.id}/edited' method='post')
+      form(action='/restaurants/#{restaurant.id}/employees/#{employee.id}/update' method='post')
         fieldset.fempEdit
           legend Edit Employee
           div.form-group
@@ -27,4 +27,4 @@ block content
               option(value='Server' selected=employee.position=== 'Server') Server
           div.buttons
             button.btn.btn-primary#sub(type='submit') Submit
-            a.btn.btn-primary(href='/restaurants/'+restaurant.id) Cancel
+            a.btn.btn-primary(href='/restaurants/#{restaurant.id}) Cancel

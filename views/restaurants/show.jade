@@ -7,6 +7,7 @@ block content
       h1.show= restaurant.name
       div#back
         a.back(href='/restaurants') View All Restaurants
+        a.neigh(href='/neighborhoods/'+restaurant.neighborhood_id) Map
     div.cont
       div.img
         img(src='#{restaurant.image}')
@@ -24,8 +25,8 @@ block content
           a.btn-link(href='/restaurants/'+restaurant.id+'/edit') Edit
           form(action='/#{restaurant.id}/delete' method='post')
             input.btn.btn-link(type='submit' value='Delete')
-          a.btn-review(href='/'+restaurant.id+'/reviews/new') Add Review 
-          a.btn-emp(href='/'+restaurant.id+'/employees/new') Add Employee 
+          a.btn-review(href='/restaurants/'+restaurant.id+'/reviews/new') Add Review 
+          a.btn-emp(href='/restaurants/'+restaurant.id+'/employees/new') Add Employee 
             
   if reviews
     div.r

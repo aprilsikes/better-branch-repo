@@ -5,14 +5,14 @@ block content
     h1 gTables
     div#new
       a.new(href='/restaurants/new') New Restaurant
-      a.admin(href='/admin/admin') Admin
+      a.admin(href='/restaurants/admin') Admin
       a.nei(href='/neighborhoods/index') Neighborhoods
   
   
   if restaurants
     for restaurant in restaurants
       div.rest
-        p.nam: a(href='restaurants/' +restaurant.id) #{restaurant.name}
+        p.nam: a(href='/restaurants/' +restaurant.id) #{restaurant.name}
         img(src='#{restaurant.image}')
         p.cui #{restaurant.cuisine} Cuisine
         p.local #{restaurant.city}, #{restaurant.state}

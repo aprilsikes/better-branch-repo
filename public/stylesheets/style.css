@@ -236,4 +236,11 @@ table {
 thead {
   background: #E6F5E2;
 }
-Status API Training Shop Blog About Pricing
+
+.neighb {
+  /*display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 20%;
+  background: #7EC479;*/
+}

@@ -5,7 +5,7 @@ block content
   div.rev
     h1.hrev New Review
   div.container
-    form(action='/'+restaurant.id+'/reviews' method='POST')
+    form(action='/restaurants/#{restaurant.id}' method='POST')
       fieldset.frev
         legend New Review
         div.form-group
@@ -18,15 +18,15 @@ block content
           input.form-control(type='text' id='date' name='date' placeholder='mm/dd/yyyy')
         div.form-group
           label Rating
-          input(type='radio' name='rating' value='1' checked)
-          input(type='radio' name='rating' value='2')
-          input(type='radio' name='rating' value='3')
-          input(type='radio' name='rating' value='4')
-          input(type='radio' name='rating' value='5')
+          input(type='radio' name='rating_of_rest' value='1' checked)
+          input(type='radio' name='rating_of_rest' value='2')
+          input(type='radio' name='rating_of_rest' value='3')
+          input(type='radio' name='rating_of_rest' value='4')
+          input(type='radio' name='rating_of_rest' value='5')
         div.form-group
           label(for='review') Review
           br
           textarea.form-control(rows='5' id='review' placeholder='Your experience...' name='review')
         div.buttons
           button.btn.btn-primary#sub(type='submit') Submit
-          a.btn.btn-primary(href='/restaurants/'+restaurant.id) Cancel
+          a.btn.btn-primary(href='/restaurants/#{restaurant.id}') Cancel

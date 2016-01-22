@@ -5,7 +5,7 @@ block content
   div.emp
     h1.hemp New Employee
   div.container
-    form(action='/restaurants/'+restaurant.id+'/employees' method='POST')
+    form(action='/restaurants/#{restaurant.id}' method='POST')
       fieldset.femp
         legend New Employee
         div.form-group
@@ -26,4 +26,4 @@ block content
             option(value='Server') Server
         div.buttons
           button.btn.btn-primary#sub(type='submit') Submit
-          a.btn.btn-primary(href='/restaurants/'+restaurant.id) Cancel
+          a.btn.btn-primary(href='/restaurants/#{restaurant.id}') Cancel

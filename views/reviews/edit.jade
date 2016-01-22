@@ -6,7 +6,7 @@ block content
     h1.hrevEdit Edit Review
   div.container
     if reviews
-      form(action='/restaurants/#{restaurant.id}/reviews/#{reviews.id}/edited' method='post')
+      form(action='/restaurants/#{restaurant.id}/reviews/#{reviews.id}/update' method='post')
         fieldset.frevEdit
           legend Edit Review
           div.form-group
@@ -19,15 +19,15 @@ block content
             input.form-control(type='text' id='date' name='date' value=reviews.date placeholder='mm/dd/yyyy')
           div.form-group
             label Rating
-            input(type='radio' name='rating' value='1' checked=(reviews ? (reviews.rating === 1 ? true : undefined): undefined))
-            input(type='radio' name='rating' value='2' checked=(reviews ? (reviews.rating === 2 ? true : undefined): undefined))
-            input(type='radio' name='rating' value='3' checked=(reviews ? (reviews.rating === 3 ? true : undefined): undefined))
-            input(type='radio' name='rating' value='4' checked=(reviews ? (reviews.rating === 4 ? true : undefined): undefined))
-            input(type='radio' name='rating' value='5' checked=(reviews ? (reviews.rating === 5 ? true : undefined): undefined))
+            input(type='radio' name='rating_of_rest' value='1' checked=(reviews ? (reviews.rating_of_rest === 1 ? true : undefined): undefined))
+            input(type='radio' name='rating_of_rest' value='2' checked=(reviews ? (reviews.rating_of_rest === 2 ? true : undefined): undefined))
+            input(type='radio' name='rating_of_rest' value='3' checked=(reviews ? (reviews.rating_of_rest === 3 ? true : undefined): undefined))
+            input(type='radio' name='rating_of_rest' value='4' checked=(reviews ? (reviews.rating_of_rest === 4 ? true : undefined): undefined))
+            input(type='radio' name='rating_of_rest' value='5' checked=(reviews ? (reviews.rating_of_rest === 5 ? true : undefined): undefined))
           div.form-group
             label(for='review') Review
             br
             textarea.form-control(rows='5' id='review' name='review') #{reviews.review}
           div.buttons
             button.btn.btn-primary#sub(type='submit') Submit
-            a.btn.btn-primary(href='/restaurants/'+restaurant.id) Cancel
+            a.btn.btn-primary(href='/restaurants/#{restaurant.id}') Cancel

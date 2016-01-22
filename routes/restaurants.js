@@ -25,7 +25,7 @@ router.get('/new', function (req, res, next) {
   res.render('restaurants/new');
 });
 
-router.post('/:id', function (req, res, next) {
+router.post('/', function (req, res, next) {
 
   var restaurant = {
     name: req.body.name,
@@ -53,6 +53,12 @@ router.get('/:id', function (req, res, next) {
         res.render('restaurants/show', {restaurant: results, reviews: payload, employees: stuff});
       });
     });
+  });
+});
+
+router.get('/admin', function (req, res, next) {
+  Restaurants().select().then(function (results) {
+    res.render('restaurants/admin', {restaurants: results});
   });
 });
 
