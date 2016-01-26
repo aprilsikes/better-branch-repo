@@ -70,7 +70,7 @@ router.get('/:id/edit', function (req, res, next) {
 
 router.post('/:id/update', function (req, res, next) {
   Restaurants().where('id', req.params.id).update(req.body).then(function (results) {
-    res.redirect('/'+req.params.id);
+    res.redirect('/restaurants/'+req.params.id);
   });
 });
 

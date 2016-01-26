@@ -17,17 +17,17 @@ router.get('/:id/employees/new', function (req, res, next) {
   });
 });
 
-router.post('/:id', function (req, res, next) {
+router.post('/:restaurant_id/employees', function (req, res, next) {
 
   var employee = {
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     position: req.body.position,
-    restaurant_id: req.params.id
+    restaurant_id: req.params.restaurant_id
   };
 
   Employees().insert(employee).then(function (results) {
-    res.redirect('/:id');
+    res.redirect('/restaurants/'+ req.params.restaurant_id);
   });
 });
 
