@@ -21,6 +21,12 @@ router.get('/', function (req, res, next) {
   });
 });
 
+router.get('/admin', function (req, res, next) {
+  Restaurants().select().then(function (results) {
+    res.render('restaurants/admin', {restaurants: results});
+  });
+});
+
 router.get('/new', function (req, res, next) {
   res.render('restaurants/new');
 });

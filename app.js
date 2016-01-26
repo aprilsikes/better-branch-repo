@@ -11,6 +11,7 @@ var restaurants = require('./routes/restaurants');
 var employees = require('./routes/employees');
 var reviews = require('./routes/reviews');
 var neighborhoods = require('./routes/neighborhoods');
+// var admin = require('./routes/admin');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/restaurants', restaurants);
 app.use('/restaurants', reviews);
 app.use('/restaurants', employees);
 app.use('/neighborhoods', neighborhoods);
+// app.use('/restaurants', admin);
 
 
 

@@ -3,20 +3,21 @@ extends ../layout
 block content
   if neighborhoods
     h1.neighb= neighborhoods.name
+    
     div#map(style='height:500px; width:700px; border: 1px solid #888')
     
     script. 
-      var map;
       var latty = #{lat_long.lat};
       var longy = #{lat_long.lng};
       
-      
+      //- this code creates the map (contains a function to run once the page has loaded)
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        //- creating a new google maps object (the map object constructor)
+        var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: latty, lng: longy},
           zoom: 17
         });
       }
-      
+    //- loading the api (this script downloads the code required to display maps on your page and will not block the loading of other resources)  
     script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo3qt_yoDV6muFVcMa96dDSGG7e6CrIyU&callback=initMap")
     

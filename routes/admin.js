@@ -9,7 +9,7 @@
 //
 // router.get('/admin', function (req, res, next) {
 //   Restaurants().select().then(function (results) {
-//     res.render('admin/admin', {restaurants: results});
+//     res.render('restaurants/admin', {restaurants: results});
 //   });
 // });
 //

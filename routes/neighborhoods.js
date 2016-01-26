@@ -28,15 +28,12 @@ router.get('/:id', function(req, res, next) {
         var lat_long = jase.results[0].geometry.location;
         res.render('neighborhoods/show', {title: 'Express', lat_long : lat_long, neighborhoods: results});
       }
-      });
+    });
   });
-
-
 });
 
 router.get('/', function (req, res, next) {
   Neighborhoods().select().then(function (results) {
-    console.log(results);
     res.render('neighborhoods/index', {neighborhoods: results});
   });
 });
