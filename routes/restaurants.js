@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var app = express();
 var knex = require('../db/knex');
+var validate = require('../lib/validations');
 
 function Restaurants() {
   return knex('restaurants');
@@ -31,6 +32,8 @@ router.get('/new', function (req, res, next) {
   res.render('restaurants/new');
 });
 
+
+
 router.post('/', function (req, res, next) {
 
   var restaurant = {
@@ -46,10 +49,15 @@ router.post('/', function (req, res, next) {
     bio: req.body.bio,
     neighborhood_id: req.body.neighborhood
   }
+  var errors = validate(req.body);
+  if (errors.length) {
+    res.render('restaurants/new', {info: req.body, errors: errors})
+  } else {
+    Restaurants().insert(restaurant).then(function (results) {
+      res.redirect('/restaurants');
+  })
 
-  Restaurants().insert(restaurant).then(function (results) {
-    res.redirect('/');
-  });
+  }
 });
 
 router.get('/:id', function (req, res, next) {

@@ -8,14 +8,18 @@ block content
     form(action='/restaurants' method='post')
       fieldset.fnew
         legend Create Restaurant
+        div.errors
+          if errors
+            for error in errors
+              p.red= error
         div.form-group
           label(for='name') Name
           br
-          input.form-control(type='text' id='name' placeholder='Restaurant Name' name='name')
+          input.form-control(type='text' id='name' placeholder='Restaurant Name' name='name' value= info ? info.name : '')
         div.form-group
           label(for='street1') Street1
           br
-          input.form-control(type='text' id='street1' placeholder='Street1' name='street1')
+          input.form-control(type='text' id='street1' placeholder='Street1' name='street1' value= info ? info.street1 : '')
         div.form-group
           label(for='street2') Street2
           br
@@ -23,10 +27,11 @@ block content
         div.form-group
           label(for='city') City
           br
-          input.form-control(type='text' id='city' placeholder='City' name='city')
+          input.form-control(type='text' id='city' placeholder='City' name='city' value= info ? info.city : '')
         div.form-group
           select(type='text' id='state' name='state')
-            option(value='AL' selected='selected') Alabama
+            option= info ? info.state : 'Select a State'
+            option(value='AL') Alabama
             option(value='AK') Alaska
             option(value='AZ') Arizona
             option(value='AR') Arkansas
@@ -80,12 +85,13 @@ block content
         div.form-group
           label(for='zip') Zip Code
           br
-          input.form-control(type='text' id='zip' placeholder='Zip Code' name='zip')
+          input.form-control(type='text' id='zip' placeholder='Zip Code' name='zip' value= info ? info.zip : '')
         div.form-group
           label(for='neighborhood_id') Neighborhood
           br
           select(type='text' id='neighborhood_id' name='neighborhood_id')
-            option(value='1' name='Barker' selected='selected') Barker
+            option= info ? info.neighborhood_id : 'Select a Neighborhood'
+            option(value='1' name='Barker') Barker
             //- option(value='2' name='Breezedale') Breezedale
             //- option(value='3' name='Briarwood') Briarwood
             //- option(value='4' name='Brook Creek') Brook Creek
@@ -134,7 +140,8 @@ block content
           label(for='cuisine') Cuisine
           br
           select(type='text' id='cuisine' name='cuisine')
-            option(value='African' selected='selected') African
+            option= info ? info.cuisine : 'Select a Cuisine'
+            option(value='African') African
             option(value='American') American
             option(value='Breakfast') Breakfast
             option(value='Cajun') Cajun
@@ -146,17 +153,17 @@ block content
             option(value='Vietnamese') Vietnamese
         div.form-group
           label Rating
-          input(type='radio' name='rating' value='1' checked)
-          input(type='radio' name='rating' value='2')
-          input(type='radio' name='rating' value='3')
-          input(type='radio' name='rating' value='4')
-          input(type='radio' name='rating' value='5')
+          input(type='radio' name='rating' id='rating' value='1' checked=(info ? (info.rating === 1 ? true : undefined): undefined))
+          input(type='radio' name='rating' id='rating' value='2' checked=(info ? (info.rating === 2 ? true : undefined): undefined))
+          input(type='radio' name='rating' id='rating' value='3' checked=(info ? (info.rating === 3 ? true : undefined): undefined))
+          input(type='radio' name='rating' id='rating' value='4' checked=(info ? (info.rating === 4 ? true : undefined): undefined))
+          input(type='radio' name='rating' id='rating' value='5' checked=(info ? (info.rating === 5 ? true : undefined): undefined))
         div.form-group
           label(for='image') Image
-          input.form-control(type='text' id='image' placeholder='Image URL' name='image')
+          input.form-control(type='text' id='image' placeholder='Image URL' name='image' value= info ? info.image : '')
         div.form-group
           label(for='bio')
-          textarea.form-control(rows='5' id='bio' placeholder='Short Bio' name='bio')
+          textarea.form-control(rows='5' id='bio' placeholder='Short Bio' name='bio' value= info ? info.bio : '')
         div.buttons
           button.btn.btn-primary#sub(type='submit') Submit
           a.btn.btn-primary(href='/restaurants') Cancel
