@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+
+  div.new
+    h1.hnew New Restaurant
+  div.container
+    form(action='/restaurants' method='post')
+      fieldset.fnew
+        legend Create Restaurant
+        
+        div.form-group
+          label(for='name') Name
+          br
+          input.form-control(type='text' id='name' placeholder='Restaurant Name' name='name')
+        div.form-group
+          label(for='location') Location
+          br
+          input.form-control(type='text' id='location' placeholder='Location' name='location')
+        div.buttons
+          button.btn.btn-primary#sub(type='submit') Submit
+          a.btn.btn-primary(href='/restaurants') Cancel
